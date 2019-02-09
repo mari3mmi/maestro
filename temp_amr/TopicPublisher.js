@@ -11,9 +11,6 @@ var TopicPublisher = function (track_id) {
             ('0' + now.getSeconds()).slice(-2)];
         var timestamp = '[' + time.join(':') + '] ';
         console.log(timestamp + line);
-        var logTextArea = document.getElementById('log');
-        logTextArea.value += timestamp + line + '\n';
-        logTextArea.scrollTop = logTextArea.scrollHeight;
     };
 
     publisher.log('\n*** Publisher to topic "' + publisher.topicName + '" is ready to connect ***');
@@ -52,11 +49,13 @@ var TopicPublisher = function (track_id) {
                 password: pass,
             });
         } catch (error) {
+            debugger;
             publisher.log(error.toString());
         }
         // define session event listeners
         publisher.session.on(solace.SessionEventCode.UP_NOTICE, function (sessionEvent) {
             publisher.log('=== Successfully connected and ready to publish messages. ===');
+            publisher.connect();
         });
         publisher.session.on(solace.SessionEventCode.CONNECT_FAILED_ERROR, function (sessionEvent) {
             publisher.log('Connection failed to the message router: ' + sessionEvent.infoStr +
