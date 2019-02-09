@@ -12,9 +12,6 @@ var TopicSubscriber = function (track_id) {
             ('0' + now.getSeconds()).slice(-2)];
         var timestamp = '[' + time.join(':') + '] ';
         console.log(timestamp + line);
-        var logTextArea = document.getElementById('log');
-        logTextArea.value += timestamp + line + '\n';
-        logTextArea.scrollTop = logTextArea.scrollHeight;
     };
 
     subscriber.log('\n*** Subscriber to topic "' + subscriber.topicName + '" is ready to connect ***');
@@ -58,6 +55,7 @@ var TopicSubscriber = function (track_id) {
         // define session event listeners
         subscriber.session.on(solace.SessionEventCode.UP_NOTICE, function (sessionEvent) {
             subscriber.log('=== Successfully connected and ready to subscribe. ===');
+            subscriber.subscribe();
         });
         subscriber.session.on(solace.SessionEventCode.CONNECT_FAILED_ERROR, function (sessionEvent) {
             subscriber.log('Connection failed to the message router: ' + sessionEvent.infoStr +
