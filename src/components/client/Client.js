@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Client.scss';
-import Soundbar from './Soundbar.js';
+import BoomBox from './BoomBox.js';
 
 class Client extends Component {
     constructor() {
@@ -19,9 +19,8 @@ class Client extends Component {
 
     render() {
       return (
-        <div className="Client">
-          <header className="header">
-            {this.state.selectedTrack === null ?
+       <div className="Client">
+           {this.state.selectedTrack === null ?
               this.state.tracks.map(((track, index) => {
                 return (
                   <button key={index} onClick={() => this.selectTrack(index)}>
@@ -30,10 +29,11 @@ class Client extends Component {
                 )
               }))
             :
-            <Soundbar index={this.state.selectedTrack}/>
+            //<Soundbar index={this.state.selectedTrack}/>
+            <BoomBox/>
             }
-          </header>
         </div>
+
       );
     }
   }
