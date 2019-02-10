@@ -1,4 +1,4 @@
-export function TopicPublisher(track_id) {
+export default function TopicPublisher(track_id) {
     var solace = window.solace;
     var publisher = {};
     publisher.session = null;

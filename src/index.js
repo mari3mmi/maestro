@@ -8,7 +8,6 @@ import Home from './components/home/Home.js';
 import Client from './components/client/Client.js';
 import Master from './components/master/Master.js';
 import * as serviceWorker from './serviceWorker';
-import * as TopicPublisher from './TopicPublisher.js';
 
 
 ReactDOM.render(

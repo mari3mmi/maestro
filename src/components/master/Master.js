@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Master.scss';
-// import * as TopicSubscriber from '../TopicSubscriber.js';
 import Audio from './Audio.js';
 import TopicSubscriber from '../../TopicSubscriber';
 
