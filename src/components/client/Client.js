@@ -30,7 +30,7 @@ class Client extends Component {
               }))
             :
             //<Soundbar index={this.state.selectedTrack}/>
-            <BoomBox index={this.state.selectedTrack}/>
+            <BoomBox index={this.state.selectedTrack} track={this.state.tracks[this.state.selectedTrack]}/>
             }
         </div>
 
