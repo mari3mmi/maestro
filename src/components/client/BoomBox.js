@@ -42,9 +42,9 @@ class BoomBox extends Component {
   <section className="master-controls">
     <Form.Input
         min={0}
-        max={100}
+        max={1}
         onChange={val=>this.onSliderChange(val)}
-        step={1}
+        step={0.1}
         type='range'
         value={this.state.value}
         />
