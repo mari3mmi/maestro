@@ -6,7 +6,7 @@ import TopicSubscriber from '../../TopicSubscriber';
 class Master extends Component {
     constructor() {
       super();
-      var tracks = ['ANTHEM KIT 03-002_bip 5 1.wav', 'ANTHEM KIT 03-003_bip 4 2.wav', 'ANTHEM KIT 03-004_bip 2.wav', 'ANTHEM KIT 03-005_bip 2.wav', 'ANTHEM KIT 03-006_bip 2.wav'];
+      var tracks = ['ANTHEM KIT 03-003_bip 4 2.wav', 'ANTHEM KIT 03-007_bip 2.wav', 'ANTHEM KIT 03-004_bip 2.wav', 'ANTHEM KIT 03-005_bip 2.wav', 'ANTHEM KIT 03-006_bip 2.wav'];
       this.state = {
         tracks: tracks,
         subscribers: tracks.map(function(_, index) {
