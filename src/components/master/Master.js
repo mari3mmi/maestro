@@ -22,13 +22,14 @@ class Master extends Component {
       this.state.subscribers.forEach((subscriber, index) => {
         function t(message) {
           subscriber.log('Received message: "' + message.getBinaryAttachment() + '", details:\n' + message.dump());
-          var new_vol = parseInt(message.getBinaryAttachment());
+          var new_vol = parseFloat(message.getBinaryAttachment());
 
           this.setState(prevState => ({
             volumes: prevState.volumes.map((vol, i) =>
               i === index ? new_vol : vol
             )
           }));
+
           document.getElementById(`audio${index}`).volume = new_vol;
         }
 
