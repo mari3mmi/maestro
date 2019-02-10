@@ -24,6 +24,10 @@ class Soundbar extends Component {
 
   onSliderChange(value) {
     this.state.publisher.publish(value);
+
+    this.setState({
+      value: value
+    });
   }
 
   render() {
@@ -31,7 +35,7 @@ class Soundbar extends Component {
       <div>
         <Slider
          value={this.state.value}
-         onChange={this.onSliderChange}
+         onChange={val => this.onSliderChange(val)}
         />
       </div>
     );
