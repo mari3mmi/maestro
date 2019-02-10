@@ -23,16 +23,16 @@ export default function TopicSubscriber(track_id) {
             subscriber.log('Already connected and ready to subscribe.');
             return;
         }
-        var hosturl = "http://localhost:80";
+        var hosturl = "http://mr4b11zr92l.messaging.mymaas.net:80";
         // check for valid protocols
         if (hosturl.lastIndexOf('ws://', 0) !== 0 && hosturl.lastIndexOf('wss://', 0) !== 0 &&
             hosturl.lastIndexOf('http://', 0) !== 0 && hosturl.lastIndexOf('https://', 0) !== 0) {
             subscriber.log('Invalid protocol - please use one of ws://, wss://, http://, https://');
             return;
         }
-        var username = "admin";
-        var pass = "admin";
-        var vpn = "default";
+        var username = "solace-cloud-client";
+        var pass = "";
+        var vpn = "msgvpn-4b11zr91r";
         if (!hosturl || !username || !pass || !vpn) {
             subscriber.log('Cannot connect: please specify all the Solace message router properties.');
             return;
