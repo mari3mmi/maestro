@@ -1,5 +1,5 @@
-var TopicPublisher = function (track_id) {
-    'use strict';
+export function TopicPublisher(track_id) {
+    var solace = window.solace;
     var publisher = {};
     publisher.session = null;
     publisher.topicName = `maestro/track/${track_id}`;

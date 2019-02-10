@@ -1,5 +1,5 @@
-var TopicSubscriber = function (track_id) {
-    'use strict';
+export default function TopicSubscriber(track_id) {
+    var solace = window.solace;
     var subscriber = {};
     subscriber.session = null;
     subscriber.topicName = `maestro/track/${track_id}`;
