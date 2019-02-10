@@ -15,8 +15,21 @@ class Master extends Component {
           subscriber.connect();
           subscriber.subscribe();
 
+          var that = this;
+          subscriber.session.on(window.solace.SessionEventCode.MESSAGE, function (message) {
+            subscriber.log('Received message: "' + message.getBinaryAttachment() + '", details:\n' + message.dump());
+            var new_vol = 100;
+
+            // that.setState(prevState => ({
+            //   volumes: prevState.volumes.map((vol, i) =>
+            //     i === index ? new_vol : vol
+            //   )
+            // }))
+          });
+
           return subscriber;
-        })
+        }),
+        volumes: tracks.map(_ => 100)
       }
     }
 
@@ -32,7 +45,7 @@ class Master extends Component {
           <header className="header">
             <div>
               {
-                this.state.tracks.map((track, index) => <Audio volume={100} key={index} track={track} />)
+                this.state.tracks.map((track, index) => <Audio volume={this.state.volumes[index]} key={index} track={track} />)
               }
             </div>
           </header>

@@ -89,10 +89,7 @@ export default function TopicSubscriber(track_id) {
         });
 
 
-       subscriber.connectToSolace();   
-
-
-
+       subscriber.connectToSolace();
     };
 
     // Actually connects the session triggered when the iframe has been loaded - see in html code
