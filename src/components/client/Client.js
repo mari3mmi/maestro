@@ -7,7 +7,7 @@ class Client extends Component {
       super();
       this.state = {
         selectedTrack: null,
-        tracks: ['ANTHEM KIT 03-002_bip 1.wav', 'ANTHEM KIT 03-003_bip 1.wav', 'ANTHEM KIT 03-004_bip 1.wav', 'ANTHEM KIT 03-005_bip 1.wav', 'ANTHEM KIT 03-006_bip.wav']
+        tracks: ['ANTHEM KIT 03-002_bip 5 1.wav', 'ANTHEM KIT 03-003_bip 4 2.wav', 'ANTHEM KIT 03-004_bip 2.wav', 'ANTHEM KIT 03-005_bip 2.wav', 'ANTHEM KIT 03-006_bip 2.wav']
       };
     }
 
