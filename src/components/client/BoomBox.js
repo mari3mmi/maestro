@@ -44,7 +44,7 @@ class BoomBox extends Component {
         min={0}
         max={1}
         onChange={val=>this.onSliderChange(val)}
-        step={0.1}
+        step={0.01}
         type='range'
         value={this.state.value}
         />
