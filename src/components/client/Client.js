@@ -25,12 +25,15 @@ class Client extends Component {
            {this.state.selectedTrack === null ?
               this.state.tracks.map(((track, index) => {
                 return (
-                  <Button content={`${track}`} color='green'  src={`${this.selectTrack(index)}`}/>
+                  <button key={index} onClick={() => this.selectTrack(index)}>
+                    {track}
+                  </button>
+                  //<Button className="button" content={`${track}`} color='green'  src={`${this.selectTrack(index)}`}/>
                 )
               }))
             :
             //<Soundbar index={this.state.selectedTrack}/>
-            <BoomBox index={this.state.selectedTrack} track={this.state.tracks[this.state.selectedTrack]}/>
+            <BoomBox index={this.state.selectedTrack}/>
             }
         </div>
 
