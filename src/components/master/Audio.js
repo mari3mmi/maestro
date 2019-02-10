@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import AudioPlayer from 'react-h5-audio-player';
 
 class Audio extends Component {
   render() {
     return (
-      <div>
-        <audio ref="audio_tag" src={process.env.PUBLIC_URL + this.props.track} autoPlay></audio>
-      </div>
+      <AudioPlayer volume={this.props.volume} src={process.env.PUBLIC_URL + '/Audio Files/Kit 1/' + this.props.track} autoPlay />
     );
   }
 }
