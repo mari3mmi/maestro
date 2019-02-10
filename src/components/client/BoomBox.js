@@ -34,8 +34,8 @@ class BoomBox extends Component {
 
     render() {
       return (
-
 <div className="boombox">
+{this.props.track}
 <div className="boombox-handle"></div>
 <div className="boombox-body">
 

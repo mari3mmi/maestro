@@ -23,6 +23,7 @@ class Audio extends Component {
           ]}
           gap={4}
         />
+        {this.props.track}
       </div>
     );
   }
