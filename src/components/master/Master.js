@@ -15,22 +15,25 @@ class Master extends Component {
           subscriber.connect();
           subscriber.subscribe();
 
-          var that = this;
-          subscriber.session.on(window.solace.SessionEventCode.MESSAGE, function (message) {
-            subscriber.log('Received message: "' + message.getBinaryAttachment() + '", details:\n' + message.dump());
-            var new_vol = 100;
-
-            // that.setState(prevState => ({
-            //   volumes: prevState.volumes.map((vol, i) =>
-            //     i === index ? new_vol : vol
-            //   )
-            // }))
-          });
-
           return subscriber;
         }),
         volumes: tracks.map(_ => 1.0)
       }
+
+      this.state.subscribers.forEach((subscriber, index) => {
+        function t(message) {
+          subscriber.log('Received message: "' + message.getBinaryAttachment() + '", details:\n' + message.dump());
+          var new_vol = 0.5;
+
+          this.setState(prevState => ({
+            volumes: prevState.volumes.map((vol, i) =>
+              i === index ? new_vol : vol
+            )
+          }));
+        }
+
+        subscriber.session.on(window.solace.SessionEventCode.MESSAGE, message => t.call(this, message));
+      });
     }
 
     componentWillUnmount() {
