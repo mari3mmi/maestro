@@ -25,7 +25,10 @@ class BoomBox extends Component {
   }
 
   onSliderChange(value) {
-    this.state.publisher.publish(value);
+    this.state.publisher.publish(value.target.value);
+    this.setState({
+        value: value.target.value
+      });
   }
 
 
@@ -37,22 +40,14 @@ class BoomBox extends Component {
 <div className="boombox-body">
 
   <section className="master-controls">
-  <Form.Input
-            min={0}
-            max={100}
-            onChange={this.handleChange}
-            step={1}
-            type='range'
-            value={this.state.value}
-          />
     <Form.Input
-            min={0}
-            max={100}
-            onChange={this.handleChange}
-            step={1}
-            type='range'
-            value={this.state.value}
-          />
+        min={0}
+        max={1}
+        onChange={val=>this.onSliderChange(val)}
+        step={0.01}
+        type='range'
+        value={this.state.value}
+        />
     <button className="control-power" role="switch" aria-checked="false" data-power="on"/>
   </section>
   <section className="tape"></section>

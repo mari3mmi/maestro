@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Client.scss';
 import BoomBox from './BoomBox.js';
+import { Form } from 'semantic-ui-react';
 
 class Client extends Component {
     constructor() {
@@ -30,7 +31,7 @@ class Client extends Component {
               }))
             :
             //<Soundbar index={this.state.selectedTrack}/>
-            <BoomBox/>
+            <BoomBox index={this.state.selectedTrack}/>
             }
         </div>
 
