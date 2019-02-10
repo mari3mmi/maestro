@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import './index.css';
+import 'semantic-ui-css/semantic.min.css';
+
+import Home from './components/home/Home.js';
 import Client from './components/client/Client.js';
+import Master from './components/master/Master.js';
 import * as serviceWorker from './serviceWorker';
 import * as TopicPublisher from './TopicPublisher.js';
-import Master from './components/master/Master.js';
 
-ReactDOM.render(<Master />, document.getElementById('root'));
+
+ReactDOM.render(
+    <Router>
+    <div>
+        <Switch>
+            <Route exact path="/" component={Home}/>            
+            <Route exact path="/master" component={Master}/>
+            <Route exact path="/client" component={Client}/>            
+        </Switch>
+    </div>
+</Router>,  	
+
+    document.getElementById('root')
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
