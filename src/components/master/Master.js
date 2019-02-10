@@ -32,7 +32,7 @@ class Master extends Component {
           <header className="header">
             <div>
               {
-                [0, 1, 2, 3, 4].map(num => <Audio volume={100} key={num} track={this.state.tracks[num]} />)
+                this.state.tracks.map((track, index) => <Audio volume={100} key={index} track={track} />)
               }
             </div>
           </header>
