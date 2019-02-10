@@ -29,7 +29,7 @@ class Master extends Component {
               i === index ? new_vol : vol
             )
           }));
-          document.getElementById(`audio${index}`).getElementsByTagName('audio')[0].volume = new_vol;
+          document.getElementById(`audio${index}`).volume = new_vol;
         }
 
         subscriber.session.on(window.solace.SessionEventCode.MESSAGE, message => t.call(this, message));
@@ -50,7 +50,6 @@ class Master extends Component {
                 this.state.tracks.map((track, index) => <Audio index={index} volume={this.state.volumes[index]} key={index} track={track} />)
               }
             </div>
-         
         </div>
       );
     }

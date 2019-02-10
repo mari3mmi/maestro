@@ -1,5 +1,8 @@
 .Master {
-    text-align: center;
+    //display: flex;
+    display: inline;
+    flex-direction: row;
+    flex-wrap: wrap;
     .header {
       background-color: #282c34;
       min-height: 100vh;
