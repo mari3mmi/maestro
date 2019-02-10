@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Client.scss';
+import {Button} from 'semantic-ui-react';
 import BoomBox from './BoomBox.js';
 import { Form } from 'semantic-ui-react';
 
@@ -24,9 +25,7 @@ class Client extends Component {
            {this.state.selectedTrack === null ?
               this.state.tracks.map(((track, index) => {
                 return (
-                  <button key={index} onClick={() => this.selectTrack(index)}>
-                    {track}
-                  </button>
+                  <Button content={`${track}`} color='green'  src={`${this.selectTrack(index)}`}/>
                 )
               }))
             :

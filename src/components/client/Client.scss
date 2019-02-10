@@ -1,5 +1,6 @@
 .Client {
     text-align: center;
+    background: none !important;
     .header {
       background-color: #282c34;
       min-height: 100vh;
@@ -11,6 +12,7 @@
       color: white;
     
     }
+    
     .BoomBox{
       padding-top: 120px;
     }
