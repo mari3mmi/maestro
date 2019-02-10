@@ -48,7 +48,6 @@ class BoomBox extends Component {
         type='range'
         value={this.state.value}
         />
-    <button className="control-power" role="switch" aria-checked="false" data-power="on"/>
   </section>
   <section className="tape"></section>
 
