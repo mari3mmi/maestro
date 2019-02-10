@@ -31,7 +31,7 @@ export default function TopicSubscriber(track_id) {
             return;
         }
         var username = "solace-cloud-client";
-        var pass = "";
+        var pass = "pispkkf17j47rqejkasee6b1k5";
         var vpn = "msgvpn-4b11zr91r";
         if (!hosturl || !username || !pass || !vpn) {
             subscriber.log('Cannot connect: please specify all the Solace message router properties.');

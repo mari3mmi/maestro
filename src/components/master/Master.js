@@ -29,7 +29,6 @@ class Master extends Component {
               i === index ? new_vol : vol
             )
           }));
-
           document.getElementById(`audio${index}`).getElementsByTagName('audio')[0].volume = new_vol;
         }
 
@@ -46,13 +45,12 @@ class Master extends Component {
     render() {
       return (
         <div className="Master">
-          <header className="header">
             <div>
               {
                 this.state.tracks.map((track, index) => <Audio index={index} volume={this.state.volumes[index]} key={index} track={track} />)
               }
             </div>
-          </header>
+         
         </div>
       );
     }

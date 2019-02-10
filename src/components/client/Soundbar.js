@@ -33,9 +33,13 @@ class Soundbar extends Component {
   render() {
     return (
       <div>
-        <Slider
-         value={this.state.value}
-         onChange={val => this.onSliderChange(val)}
+          <Form.Input
+          min={0}
+          max={1}
+          onChange={this.handleChange}
+          step={0.01}
+          type='range'
+          value={this.state.value}
         />
       </div>
     );
