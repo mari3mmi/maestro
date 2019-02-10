@@ -23,7 +23,7 @@ class Master extends Component {
       this.state.subscribers.forEach((subscriber, index) => {
         function t(message) {
           subscriber.log('Received message: "' + message.getBinaryAttachment() + '", details:\n' + message.dump());
-          var new_vol = 0.5;
+          var new_vol = parseInt(message.getBinaryAttachment());
 
           this.setState(prevState => ({
             volumes: prevState.volumes.map((vol, i) =>
