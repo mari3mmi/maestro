@@ -1,24 +1,37 @@
 import React, { Component } from 'react';
 import './Client.scss';
-
+import Soundbar from './Soundbar.js';
 
 class Client extends Component {
+    constructor() {
+      super();
+      this.state = {
+        selectedTrack: null,
+        tracks: ['ANTHEM KIT 03-002_bip 1.wav', 'ANTHEM KIT 03-003_bip 1.wav', 'ANTHEM KIT 03-004_bip 1.wav', 'ANTHEM KIT 03-005_bip 1.wav', 'ANTHEM KIT 03-006_bip.wav']
+      };
+    }
+
+    selectTrack(index) {
+      this.setState({
+        selectedTrack: index,
+      })
+    }
+
     render() {
       return (
         <div className="Client">
           <header className="header">
-            <p>
-             Client Page
-            </p>
-            <p>
-              We want to list all the tracks (ids 0 to ...).
-            </p>
-            <p>
-              when one is selected, show the sound controller and create TopicPublisher based on the track id.
-            </p>
-            <p>
-              Subscribe to the event and publish the volume level!
-            </p>
+            {this.state.selectedTrack === null ?
+              this.state.tracks.map(((track, index) => {
+                return (
+                  <button key={index} onClick={() => this.selectTrack(index)}>
+                    {track}
+                  </button>
+                )
+              }))
+            :
+            <Soundbar index={this.state.selectedTrack}/>
+            }
           </header>
         </div>
       );
