@@ -83,9 +83,9 @@ export function TopicPublisher(track_id) {
     };
 
     // Publishes one message.
-    publisher.publish = function () {
+    publisher.publish = function (level) {
         if (publisher.session !== null) {
-            var messageText = 'Sample Message';
+            var messageText = level.toString();
             var message = solace.SolclientFactory.createMessage();
             message.setDestination(solace.SolclientFactory.createTopicDestination(publisher.topicName));
             message.setBinaryAttachment(messageText);
